@@ -1,0 +1,49 @@
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+*{
+    box-sizing: border-box;
+}
+.row{
+    float: left;
+    width: 100%;
+}
+.header {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: orange;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 40px;
+    border-radius: 4px;
+
+
+}
+/* .header img{
+    width: 40px;
+    height: 40px;
+    float: right;
+    
+} */
+.menu{
+    border: 1px solid black;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.menu ul{
+    padding: 10px;
+}
+.menu ul li{
+    list-style: none;
+    display: inline;
+    padding: 0 15px;
+}
+.menu ul li a{
+    text-decoration: none;
+
+}
+.dangki{
+    float: right;
+    justify-items: center;
+}
