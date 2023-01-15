@@ -47,3 +47,32 @@
     float: right;
     justify-items: center;
 }
+.border_img img{
+    width: 100px;
+    height: 100px;
+    display: grid;
+    
+}
+.border_img{
+    float: left;
+    width: 32%;
+    min-height: 300px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+    
+    
+}
+.left{
+    float: left;
+    width: 78%;
+    display: grid;
+    grid-template-columns: 1 1 1; 
+    
+}
+.right{
+    float: right;
+    width: 22%;
+    background-color: black;
+}
