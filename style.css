@@ -43,14 +43,10 @@
     text-decoration: none;
 
 }
-.dangki{
-    float: right;
-    justify-items: center;
-}
 .border_img img{
     width: 100px;
-    height: 100px;
-    display: grid;
+    height: 120px;
+    margin-top: 20px;
     
 }
 .border_img{
@@ -64,15 +60,180 @@
     
     
 }
+.mr{
+    margin-right: 1%;
+}
+.mt{
+    margin-top: 10px;
+}
+.mb{
+    margin-bottom: 20px;
+}
 .left{
     float: left;
     width: 78%;
-    display: grid;
-    grid-template-columns: 1 1 1; 
-    
 }
 .right{
     float: right;
     width: 22%;
-    background-color: black;
+}
+.boxtitle{
+    background-color: #eee;
+    border-top-left-radius:5px ;
+    border-top-right-radius:5px ;
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    color: #333;
+    padding: 10px;
+}
+.boxcontent{
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 200px;
+    padding: 20px;
+}
+.boxcontent2{
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    min-height: 200px;
+    background-color: #ccc;
+}
+.boxforder{
+    background-color: #eee;
+    border-bottom-left-radius:5px ;
+    border-bottom-right-radius:5px ;
+   border: 1px #ccc solid;
+    
+    padding: 10px;
+}
+.banner{
+    min-height: 300px;
+    width: 100%;
+    text-align: center;
+}
+.banner img{
+    height: 300px;
+  
+}
+.boxsanpham{
+    float: left;
+    width: 32%;
+    min-height: 300px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.boxsanpham img{
+    margin-top: 20px;
+    width: 100px;
+    height: 120px;
+}
+.menu ul{
+    padding: 15px;
+
+}
+.menu ul li{
+    list-style: none;
+    display: inline;
+    padding: 0px 15px;
+}
+.menu ul li a{
+    color: white;
+    text-decoration: none;
+}
+.menu ul li a:hover{
+    color: aqua;
+    font-size: 1.2vw;
+}
+.formtk{
+    line-height: 150%;
+}
+.mb1{
+    margin-bottom: 10px;
+}
+.formtk input[type="text"],
+.formtk input[type="password"],
+.formtk input[type="email"],
+.formcontent input[type="text"]
+{
+    width: 100%;
+    border: 1px #ccc solid;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+.formtk input[type="checkbox"]{
+    border: 1px #ccc solid;
+    border-radius: 5px;
+
+}
+.formtk input[type="checkbox"]{
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+.formtk input[type="checkbox"]:hover{
+    background-color: aquamarine;
+}
+.formtk li a{
+    text-decoration: none;
+    color: aquamarine;
+}
+.formtk li a :hover{
+    text-decoration: none;
+    color: bisque;
+}
+.menudoc ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+.menudoc ul li{
+    
+    padding: 10px 20px;
+    background-color: #eee;
+    border:1px solid #ccc;
+}
+.menudoc ul li a{
+    text-decoration: none;
+    color: #666;
+}
+.menudoc ul :hover{
+    background-color: #ccc;
+}
+.tkbox input[type="text"]{
+    width: 100%;
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px #eee solid;
+    border-radius: 5px;
+}
+.top10 img{
+    width: 15%;
+    height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+.top10 a{
+    text-decoration: none;
+    color: #ccc;
+
+}
+.top10 a:hover{
+    color: #333;
+    text-decoration: underline;
+}
+.footer{
+    background-color: orange;
+    text-align: center;
+    border-radius: 2px;
+
 }
