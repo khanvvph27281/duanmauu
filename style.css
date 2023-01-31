@@ -27,6 +27,7 @@
     
 } */
 .menu{
+    background-color:white;
     border: 1px solid black;
     margin-top: 20px;
     border-radius: 5px;
@@ -41,6 +42,7 @@
 }
 .menu ul li a{
     text-decoration: none;
+
 
 }
 .border_img img{
@@ -144,7 +146,7 @@
     padding: 0px 15px;
 }
 .menu ul li a{
-    color: white;
+    color: #333;
     text-decoration: none;
 }
 .menu ul li a:hover{
@@ -237,3 +239,16 @@
     border-radius: 2px;
 
 }
+.formtitle{
+    background-color: #eee;
+    border: 1px #ccc solid;
+    color: #666;
+    border-radius: 5px;
+    padding: 0 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.mb2{
+    margin-bottom: 20px;
+}
+

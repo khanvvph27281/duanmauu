@@ -1,6 +1,6 @@
 <?php
 function pdo_get_connection(){
-    $dburl="mysql:host=localhost;dbname=xshop;charset=utf8";
+    $dburl="mysql:host=localhost;dbname=xxshop;charset=utf8";
     $username='root';
     $passwood='';
     $conn=new PDO($dburl,$username,$passwood);
