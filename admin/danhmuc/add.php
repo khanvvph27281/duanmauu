@@ -15,7 +15,7 @@
                   <div class="row mb2">
                     <input type="submit" name="them" id="" value="Thêm Mới">
                     <input type="reset" value="Nhập Lại">
-                    <a href="">    <input type="button" name="" id="" value="Danh Sách"></a>
+                    <a href="index.php?act=listdm">    <input type="button" name="" id="" value="Danh Sách"></a>
                
                   </div>
                    <?php
