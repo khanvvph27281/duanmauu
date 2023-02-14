@@ -2,6 +2,7 @@
 include "../model/danhmuc.php";
 include "header.php";
 include "../model/pdo.php";
+
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -14,19 +15,72 @@ if (isset($_GET['act'])) {
             include "danhmuc/add.php";
             break;
         case 'listdm':
-            $load = load_danhmuc();
+            $load_dm = load_danhmuc();
             include "danhmuc/list.php";
             break;
         case 'deletedm':
-            if(isset($_GET['id'])&& $_GET['id']>0){
-                $delete=delete_danhmuc($_GET['id']);
-                $load = load_danhmuc();
+            if (isset($_GET['iddm']) && $_GET['iddm'] > 0) {
+                $delete = delete_danhmuc($_GET['iddm']);
+                $load_dm = load_danhmuc();
             }
-            
+
             include "danhmuc/list.php";
             break;
-        
 
+        case 'suadm':
+            if (isset($_GET['iddm']) && $_GET['iddm'] > 0) {
+                $suadm = loadone_danhmuc($_GET['iddm']);
+            }
+            include "danhmuc/update.php";
+            break;
+        case 'updatedm':
+            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                $tenloai = $_POST['tenloai'];
+                $id = $_POST['id'];
+                $update = update_dm($tenloai, $id);
+            }
+            $load_dm = load_danhmuc();
+            include "danhmuc/list.php";
+            break;
+        case 'addsp':
+            if (isset($_POST['themsp']) && $_POST['themsp']) {
+                $iddm = $_POST['iddm'];
+
+                $tensp = $_POST['tensp'];
+                $gia = $_POST['giasp'];
+                $hinh = $_FILES["hinh"]["name"];
+                $target_dir = "../img/";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                } else {
+                }
+                $mota = $_POST['mota'];
+                insert_sanpham($tensp, $gia, $hinh, $mota, $iddm);
+                $thongbao = "Thêm Thành công ";
+            }
+            $load_dm = load_danhmuc();
+            include "sanpham/add.php";
+            break;
+        case 'listsp':
+            $load_sp = load_sanpham();
+            include "sanpham/list.php";
+            break;
+        case 'deletesp':
+            if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
+                $delete_sp = delete_sanpham($_GET['idsp']);
+                $load_sp = load_sanpham();
+            }
+
+            include "sanpham/list.php";
+            break;
+        case 'suasp':
+            if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
+                $suasp = loadone_sanpham($_GET['idsp']);
+
+            }
+            $load_dm = load_danhmuc();
+            include "sanpham/update.php";
+            break;
         case 'trangchu':
             include "home.php";
             break;

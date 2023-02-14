@@ -10,16 +10,16 @@
             <th>Khác</th>
         </tr>
         <?php
-        foreach ($load as $load){
-            extract($load);
-            $delete_dm="index.php?act=deletedm&&id= ".$id;
-            $update_dm="index.php?act=updatedm&&id= ".$id;
+        foreach ($load_dm as $loadall){
+            extract($loadall);
+            $delete_dm="index.php?act=deletedm&&iddm= ".$id;
+            $update_dm="index.php?act=suadm&&iddm= ".$id;
              echo ' <tr>
             <td></td>
             <td>'.$id.'</td>
             <td>'.$name.'</td>
             <td> <a href="'.$delete_dm.'"><input type="button" value="Xóa"></a> 
-       <a href="'.$update_dm.'"><input type="button" value="Sửa"></a>
+       <a href="'.$update_dm.'"><input type="submit" value="Sửa"></a>
             </td>
         </tr>';
         }
