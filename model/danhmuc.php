@@ -23,7 +23,7 @@ function update_dm($name,$id){
     pdo_execute($sql);
 }
 function insert_sanpham($tensp,$gia,$hinh,$mota,$iddm){
-    $sql = "insert into sanpham(name,price,img,mota,id_danhmuc) values('$tensp','$gia','$hinh','$mota','$iddm')";
+    $sql = "insert into sanpham(name_sp,price,img,mota,id_danhmuc) values('$tensp','$gia','$hinh','$mota','$iddm')";
     pdo_execute($sql);
 }
 function load_sanpham(){
@@ -41,5 +41,8 @@ function loadone_sanpham($id){
     return pdo_query_one($sql);
 
 }
-
+function update_sp($name_sp,$gia,$hinh,$mota,$iddm,$id){
+    $sql = "update sanpham set name_sp ='".$name_sp."' , price='".$gia."',img='".$hinh."',mota ='".$mota."',id_danhmuc= '".$iddm."' where id=".$id;
+    pdo_execute($sql);
+}
 ?>

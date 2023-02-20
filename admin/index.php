@@ -76,10 +76,27 @@ if (isset($_GET['act'])) {
         case 'suasp':
             if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
                 $suasp = loadone_sanpham($_GET['idsp']);
-
             }
             $load_dm = load_danhmuc();
             include "sanpham/update.php";
+            break;
+        case 'updatesp':
+            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                $iddm=$_POST['iddm'];
+                $tensp=$_POST['namesp'];
+                $gia=$_POST['giasp'];
+                $hinh = $_FILES["hinh"]["name"];
+                $target_dir = "../img/";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                } else {
+                }
+                $id=$_POST['id'];
+               $mota=$_POST['mota'];
+               update_sp($tensp,$gia,$hinh,$mota,$iddm,$id);
+            }
+            $load_sp = load_sanpham();
+            include "sanpham/list.php";
             break;
         case 'trangchu':
             include "home.php";

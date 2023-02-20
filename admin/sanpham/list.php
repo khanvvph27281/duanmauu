@@ -21,7 +21,7 @@
              echo ' <tr>
             <td></td>
             <td>'.$id.'</td>
-            <td>'.$name.'</td>
+            <td>'.$name_sp.'</td>
             <td>'.$price.'</td>
             <td><img src="../img/'.$img.'" alt="" height="60px" width="60px" ></td>
             <td>'.$mota.'</td>
