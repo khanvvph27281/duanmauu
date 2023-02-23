@@ -2,7 +2,8 @@
 include "../model/danhmuc.php";
 include "header.php";
 include "../model/pdo.php";
-
+include "../model/taikhoan.php";
+include "../model/binhluan/binhluan.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -82,21 +83,45 @@ if (isset($_GET['act'])) {
             break;
         case 'updatesp':
             if (isset($_POST['capnhat']) && $_POST['capnhat']) {
-                $iddm=$_POST['iddm'];
-                $tensp=$_POST['namesp'];
-                $gia=$_POST['giasp'];
+                $iddm = $_POST['iddm'];
+                $tensp = $_POST['namesp'];
+                $gia = $_POST['giasp'];
                 $hinh = $_FILES["hinh"]["name"];
                 $target_dir = "../img/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                 } else {
                 }
-                $id=$_POST['id'];
-               $mota=$_POST['mota'];
-               update_sp($tensp,$gia,$hinh,$mota,$iddm,$id);
+                $id = $_POST['id'];
+                $mota = $_POST['mota'];
+                update_sp($tensp, $gia, $hinh, $mota, $iddm, $id);
             }
             $load_sp = load_sanpham();
             include "sanpham/list.php";
+            break;
+        case 'dskh':
+            $loadtaikhoan = loadtaikhoan();
+            include "taikhoan/list.php";
+            break;
+        case 'deletetk':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $delete_tk = delete_taikhoan($_GET['id']);
+                $loadtaikhoan = loadtaikhoan();
+            }
+
+            include "taikhoan/list.php";
+            break;
+        case 'dsbl':
+            $loadbinhluan = loadbinhluan();
+            include "binhluan/list.php";
+            break;
+        case 'deletebl':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $delete_bl = delete_binhluan($_GET['id']);
+                $loadbinhluan = loadbinhluan();
+            }
+
+            include "binhluan/list.php";
             break;
         case 'trangchu':
             include "home.php";

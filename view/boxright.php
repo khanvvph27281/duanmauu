@@ -11,14 +11,19 @@
             </div>
             <div class="row mb1">
                 <li>
-                    <a href="index.php?act=quenmk">Quên Mật khẩu</a>
-                </li>
-                <li>
                     <a href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
                 </li>
+                <?php
+                if($role==1){
+
+                
+                ?>
                 <li>
                     <a href="admin/index.php">Đăng Nhập admin</a>
                 </li>
+                <?php
+                }
+                ?>
                 <li>
                     <a href="index.php?act=thoat">Thoát</a>
                 </li>

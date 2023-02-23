@@ -45,4 +45,5 @@ function update_sp($name_sp,$gia,$hinh,$mota,$iddm,$id){
     $sql = "update sanpham set name_sp ='".$name_sp."' , price='".$gia."',img='".$hinh."',mota ='".$mota."',id_danhmuc= '".$iddm."' where id=".$id;
     pdo_execute($sql);
 }
+
 ?>

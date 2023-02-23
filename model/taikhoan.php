@@ -17,4 +17,14 @@ function checkemail($email){
     return pdo_query_one($sql);
 
 }
+function loadtaikhoan(){
+    $sql="select * from taikhoan";
+    return pdo_query($sql);
+
+}
+function delete_taikhoan($id){
+    $sql="delete from taikhoan where id=".$id;
+    pdo_execute($sql);
+
+}
 ?>
