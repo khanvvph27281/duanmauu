@@ -53,11 +53,22 @@
                 echo ' <div class="border_img '.$mr.'">
                 <img src="'.$hinh.'" alt="">
                 <p>'.$price.'</p>
-                <a href="'.$linksp.'">'.$name_sp.'</a>
+                <a href="'.$linksp.'">'.$name_sp.'</a><br>
+                  <div class="row">
+            <form action="index.php?act=addtocart" method="post">
+                <input type="hidden" name="id" value="'.$id.'">
+                <input type="hidden" name="name_sp" value="'.$name_sp.'">
+                <input type="hidden" name="img" value="'.$img.'">
+                <input type="hidden" name="price" value="'.$price.'">
+                <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+
+            </form>
+           </div>
+               
             </div>';
             }
             ?>
-           
+         
             <!-- <div class="border_img mr">
                 <img src="img/Cach-cai-hinh-nen-iphone-1_ 1jpg.jpg" alt="">
             </div>
