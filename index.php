@@ -28,11 +28,12 @@ if(isset($_GET['act']) && ($_GET['act'])!=""){
                     
                     extract($load_one);
                     $load_cl=loadsanpham_cungloai($id,$id_danhmuc);
-
+                    
                     
                 }else{
                     include "./view/home.php";
                 }
+                $load_top10=loadall_sp_top10();
                 include "view/sanphamct.php";
                 break;
             case 'sanpham':
@@ -167,9 +168,14 @@ if(isset($_GET['act']) && ($_GET['act'])!=""){
                             $pttt=$_POST['pttt'];
                             $ngaydathang=date("h:i:sa d/m/Y");
                             $total=tongdonhang();
-                            insert_bill($name,$address,$tell,$email,$pttt,$ngaydathang,$total);
+                            $idbill=insert_bill($name,$address,$tell,$email,$pttt,$ngaydathang,$total);
 
                         }
+                        foreach($_SESSION['mycart'] as $cart){
+                            insert_cart($_SESSION['hoten']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
+                        }
+                        $bill=load_onebill($idbill);
+                        $bill_ct=load_onecart($idbill);
                         include 'view/cart/billcomfim.php';
                         break;
     

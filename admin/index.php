@@ -82,10 +82,10 @@ if (isset($_GET['act'])) {
             include "sanpham/update.php";
             break;
         case 'updatesp':
-            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+            if (isset($_POST['capnhatsp'])) {
                 $iddm = $_POST['iddm'];
-                $tensp = $_POST['namesp'];
-                $gia = $_POST['giasp'];
+                $tensp = $_POST['name_sp'];
+                $gia = $_POST['gia'];
                 $hinh = $_FILES["hinh"]["name"];
                 $target_dir = "../img/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
@@ -94,8 +94,8 @@ if (isset($_GET['act'])) {
                 }
                 $id = $_POST['id'];
                 $mota = $_POST['mota'];
-                update_sp($tensp, $gia, $hinh, $mota, $iddm, $id);
-            }
+                
+            }update_sanpham($id,$iddm,$tensp, $gia, $mota,$hinh);
             $load_sp = load_sanpham();
             include "sanpham/list.php";
             break;

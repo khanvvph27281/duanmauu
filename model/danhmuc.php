@@ -41,8 +41,11 @@ function loadone_sanpham($id){
     return pdo_query_one($sql);
 
 }
-function update_sp($name_sp,$gia,$hinh,$mota,$iddm,$id){
-    $sql = "update sanpham set name_sp ='".$name_sp."' , price='".$gia."',img='".$hinh."',mota ='".$mota."',id_danhmuc= '".$iddm."' where id=".$id;
+function update_sanpham($id,$iddm,$tensp,$gia,$mota,$hinh){
+    if($hinh!="")
+    $sql= "update sanpham set id_danhmuc='".$iddm."', name_sp='".$tensp."', price='".$gia."', mota='".$mota."', img='".$hinh."' where id=".$id;
+    else
+    $sql= "update sanpham set id_danhmuc='".$iddm."', name_sp='".$tensp."', price='".$gia."', mota='".$mota."' where id=".$id;
     pdo_execute($sql);
 }
 

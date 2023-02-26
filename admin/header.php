@@ -17,10 +17,10 @@
         <div class="menu row">
             <ul>
                 <li><a href="index.php">Trang Chủ</a></li>
-                <li><a href="index.php?act=adddm">Trang Chủ</a></li>
-                <li><a href="index.php?act=addsp">Trang Chủ</a></li>
-                <li><a href="index.php?act=dskh">Trang Chủ</a></li>
-                <li><a href="index.php?act=dsbl">Trang Chủ</a></li>
-                <li><a href="index.php?act=thongke">Trang Chủ</a></li>
+                <li><a href="index.php?act=adddm">Danh Mục</a></li>
+                <li><a href="index.php?act=addsp">Sản Phẩm</a></li>
+                <li><a href="index.php?act=dskh">Tài khoản</a></li>
+                <li><a href="index.php?act=dsbl">Bình Luận</a></li>
+                <li><a href="index.php?act=thongke">Thống kê</a></li>
             </ul>
         </div>

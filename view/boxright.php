@@ -93,7 +93,7 @@
         <?php
         foreach ($load_top10 as $load) {
             extract($load);
-            $linksp = "index.php?act=sanphamct&&id=" . $id;
+            $linksp = "index.php?act=sanphamct&&id_sp=" . $id;
             $img = $img_path . $img;
             echo '<div class="row mb1 top10">
                     <img src="' . $img . '" alt="">
