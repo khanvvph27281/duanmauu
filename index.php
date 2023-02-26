@@ -6,6 +6,7 @@ include "./model/pdo.php";
 include "./model/trangchu.php";
 include "./model/danhmuc.php";
 include "./model/taikhoan.php";
+include "./model/cart.php";
 if(!isset($_SESSION['mycart'])) {
     $_SESSION['mycart']=[];
 }
@@ -42,6 +43,7 @@ if(isset($_GET['act']) && ($_GET['act'])!=""){
                 }else{
                     include "./view/home.php";
                 }
+                
                 include "view/sanpham.php";
                 
                 break;
@@ -124,7 +126,7 @@ if(isset($_GET['act']) && ($_GET['act'])!=""){
                                 header('location: index.php');
                                 break;
         
-            break;
+           
         case 'addtocart':
             if(isset($_POST['addtocart'])){
                 $id=$_POST['id'];
@@ -153,6 +155,23 @@ if(isset($_GET['act']) && ($_GET['act'])!=""){
             case 'viewcart':
                 include 'view/cart/viewcart.php';
                 break;
+                case 'bill':
+                    include 'view/cart/bill.php';
+                    break;
+                    case 'billcomfim':
+                        if(isset($_POST['dongydathang'])){
+                            $name=$_POST['hoten'];
+                            $addres=$_POST['address'];
+                            $email=$_POST['email'];
+                            $tell=$_POST['sdt'];
+                            $pttt=$_POST['pttt'];
+                            $ngaydathang=date("h:i:sa d/m/Y");
+                            $total=tongdonhang();
+                            insert_bill($name,$address,$tell,$email,$pttt,$ngaydathang,$total);
+
+                        }
+                        include 'view/cart/billcomfim.php';
+                        break;
     
 
         default:
