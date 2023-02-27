@@ -22,7 +22,7 @@
              echo '  <tr>  <td>'.$madm.'</td>
              <td>'.$tendm.'</td>
              <td>'.$countsp.'</td>
-             <td>'.$maxprice.'t</td>
+             <td>'.$maxprice.'</td>
              <td>'.$minprice.'</td>
              <td>'.$avg.'</td></tr>';
         }
@@ -30,9 +30,8 @@
         ?>
      
     </table>
-    <input type="button" value="Chọn Tất Cả">
-    <input type="button" value="Bỏ chọn tất cả ">
-    <input type="button" value="Xóa mục đã chọn ">
-   <a href="index.php?act=adddm"><input type="button" value="nhập thêm"></a></div>
+    <a href="index.php?act=bieudo"> <input type="submit" value="xem Biểu đồ "></a>
+   
+    </div>
    </div>
     

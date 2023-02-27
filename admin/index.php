@@ -95,8 +95,8 @@ if (isset($_GET['act'])) {
                 }
                 $id = $_POST['id'];
                 $mota = $_POST['mota'];
-                
-            }update_sanpham($id,$iddm,$tensp, $gia, $mota,$hinh);
+            }
+            update_sanpham($id, $iddm, $tensp, $gia, $mota, $hinh);
             $load_sp = load_sanpham();
             include "sanpham/list.php";
             break;
@@ -128,8 +128,12 @@ if (isset($_GET['act'])) {
             include "home.php";
             break;
         case 'thongke':
-            $load=loadall_thongke();
+            $load = loadall_thongke();
             include "thongke/thongke.php";
+            break;
+        case 'bieudo':
+            $loadbieudo = loadall_thongke();
+            include "thongke/bieudo.php";
             break;
         default:
             include "home.php";
