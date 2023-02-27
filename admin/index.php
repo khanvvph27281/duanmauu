@@ -4,6 +4,7 @@ include "header.php";
 include "../model/pdo.php";
 include "../model/taikhoan.php";
 include "../model/binhluan/binhluan.php";
+include "../model/cart.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -125,6 +126,10 @@ if (isset($_GET['act'])) {
             break;
         case 'trangchu':
             include "home.php";
+            break;
+        case 'thongke':
+            $load=loadall_thongke();
+            include "thongke/thongke.php";
             break;
         default:
             include "home.php";
