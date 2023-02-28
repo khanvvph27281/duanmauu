@@ -23,11 +23,10 @@
 
             
             <li><a href="index.php">Trang Chủ</a></li>
-            <li><a href="index.php?act=adddm">Trang Chủ</a></li>
-            <li><a href="index.php?act=addsp">Trang Chủ</a></li>
-            <li><a href="index.php?act=dskh">Trang Chủ</a></li>
-            <li><a href="index.php?act=dsbl">Trang Chủ</a></li>
-            <li><a href="index.php?act=thongke">Trang Chủ</a></li> 
+            <li><a href="">Giới Thiệu</a></li>
+            <li><a href="">Hỏi Đáp </a></li>
+            <li><a href="">Liên Hệ</a></li>
+            
             </ul>
            
         </div>

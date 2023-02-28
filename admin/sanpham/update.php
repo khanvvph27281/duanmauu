@@ -2,13 +2,19 @@
 if (is_array($suasp)) {
     extract($suasp);
 }
+$hinhpath="../img/".$img;
+if(is_file($hinhpath)){
+  $hinh="<img src ='".$hinhpath."' height='80'>";
+}else{
+  $hinh = " No image";
+}
 ?>
 <div class="row">
     <div class="row formtitle">
         <h1>Cập Nhật Sản Phẩm</h1>
     </div>
     <div class="row formcontent">
-        <form action="index.php?act=updatesp" method="post" enctype="multipart/form-data">
+    <form action="index.php?act=update_sp" method="POST" enctype="multipart/form-data">
             <div class="row mb2">
                 Danh Mục :<br>
                 <select name="iddm" id="">
@@ -22,16 +28,12 @@ if (is_array($suasp)) {
                 </select>
             </div>
             <div class="row mb2">
-                Mã Sản Phẩm <br>
-                <input type="text" disabled>
-            </div>
-            <div class="row mb2">
                 Tên Sản Phẩm <br>
-                <input type="text" name="name_sp" value="<?= $name_sp; ?>">
+                <input type="text" name="namesp" value="<?= $name_sp; ?>">
             </div>
             <div class="row mb2">
                 Giá <br>
-                <input type="text" name="gia" value="<?= $price ?>">
+                <input type="text" name="price" value="<?= $price ?>">
             </div>
             <div class="row mb2">
                 Hình <br>
@@ -39,22 +41,16 @@ if (is_array($suasp)) {
             </div>
             <div class="row mb2">
                 Mô Tả <br>
-                <textarea name="mota" id="" cols="30" rows="10" value=""><?= $mota; ?></textarea>
+                <textarea name="mota"cols="30" rows="10" value=""><?= $mota; ?></textarea>
             </div>
             <div class="row mb2">
                 <input type="hidden" name="id" value="<?= $id ?>">
-                <input type="submit" name="capnhatsp"  value="Cập Nhật">
+                <input type="submit" name="capnhatsanpham"  value="Cập Nhật">
                 <input type="reset" value="Nhập Lại">
                 <a href="index.php?act=listsp"> <input type="button" name="" id="" value="Danh Sách"></a>
 
             </div>
-            <?php
-            if (isset($thongbao) && $thongbao != "") {
-                echo $thongbao;
-            }
-
-            ?>
+         
         </form>
     </div>
-</div>
 </div>

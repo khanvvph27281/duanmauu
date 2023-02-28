@@ -55,7 +55,7 @@
 
         </form>
         <li>
-            <a href="">Quên Mật khẩu</a>
+            <a href="index.php?act=quenmk">Quên Mật khẩu</a>
         </li>
         <li>
             <a href="index.php?act=dangky">Đăng Kí</a>

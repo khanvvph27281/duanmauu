@@ -82,21 +82,22 @@ if (isset($_GET['act'])) {
             $load_dm = load_danhmuc();
             include "sanpham/update.php";
             break;
-        case 'updatesp':
-            if (isset($_POST['capnhatsp'])) {
-                $iddm = $_POST['iddm'];
-                $tensp = $_POST['name_sp'];
-                $gia = $_POST['gia'];
-                $hinh = $_FILES["hinh"]["name"];
+        case 'update_sp':
+            if (isset($_POST['capnhatsanpham']) && ($_POST['capnhatsanpham'])){
+                $iddm=$_POST['iddm'];
+                $name=$_POST['namesp'];
+                $price=$_POST['price'];
+                $hinh=$_FILES['hinh']["name"];
                 $target_dir = "../img/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                 } else {
                 }
-                $id = $_POST['id'];
-                $mota = $_POST['mota'];
+                 $mota=$_POST['mota'];
+                 $id=$_POST['id'];
+
+                update_sanpham($id,$name,$price,$hinh,$mota,$iddm);
             }
-            update_sanpham($id, $iddm, $tensp, $gia, $mota, $hinh);
             $load_sp = load_sanpham();
             include "sanpham/list.php";
             break;
@@ -141,3 +142,4 @@ if (isset($_GET['act'])) {
     }
 }
 include "footer.php";
+?>
